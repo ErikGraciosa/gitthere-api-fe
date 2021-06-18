@@ -1,4 +1,5 @@
 # gitthere-api-fe
+Redeploying and adding features for data display.
 
 The application will display locations of scooters, bikes, buses, and trains in Portland, OR based on user input location. Requires login/sign-up for use. Log in will save user input locations to favorites for fast retrival.
 
