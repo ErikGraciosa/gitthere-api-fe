@@ -11,7 +11,7 @@ export default class About extends Component {
         return (
             <>
                 <h2 className="about-h2">About Us</h2>
-                <div className="about">
+                {/* <div className="about">
                     <div className="about-div">
                         <img src='https://avatars3.githubusercontent.com/u/18178118?s=460&u=290e25028eca8625d7937546f483102a26a15124&v=4' alt="perry-sittser" />
                         <p className="name">Perry Sittser</p>
@@ -31,7 +31,7 @@ export default class About extends Component {
                         <span className="title"><div className="about-icon"><a href={`https://github.com/ErikGraciosa`}><BasicMarkerGitHub /></a></div><div className="about-icon"><a href={`https://www.linkedin.com/in/erikgraciosa/`}>< BasicMarkerLinkedIn /></a></div></span>
                         <span className="bio">Erik is a full-stack software engineer. Two wheeled transportation is his top choice. In the gitThere application he practiced full stack development in React and writing Express endpoints. </span>
                     </div>
-                </div >
+                </div > */}
             </>
         )
     }
