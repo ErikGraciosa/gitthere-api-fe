@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './Map.css';
+import './DemoMap.css';
 
 
 export default class BasicMarkerTriMet extends Component {

@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import request from 'superagent';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './Home.css'
 
+//const URL = 'http://localhost:7980';
+const URL = 'https://desolate-bayou-65072.herokuapp.com';
 
 export default class Home extends Component {
 
@@ -12,13 +15,13 @@ export default class Home extends Component {
         loginPassword: '',
         loading: false,
     }
-
+    
     handleSignupSubmit = async (e) => {
         e.preventDefault();
 
         this.setState({ loading: true })
         const user = await request
-            .post('https://desolate-bayou-65072.herokuapp.com/auth/signup')
+            .post(`${URL}/auth/signup`)
             .send({
                 email: this.state.signUpEmail,
                 password: this.state.signUpPassword
@@ -40,7 +43,7 @@ export default class Home extends Component {
         this.setState({ loading: true })
         try {
             const user = await request
-                .post('https://desolate-bayou-65072.herokuapp.com/auth/signin')
+                .post(`${URL}/auth/signin`)
                 .send({
                     email: this.state.loginEmail,
                     password: this.state.loginPassword
@@ -67,6 +70,9 @@ export default class Home extends Component {
             <>
                 <section className="home">
                     <div className="home-image">
+                        <h3 className="welcome-text">gitThere: API displays bike share, scooter, and bus system locations in Portland, OR.</h3>
+                        <h3 className="welcome-text">Sign up or log in to continue to the map in order to save locations.</h3>
+                        <h3 className="welcome-text">If you would like to demo the map, click "Preview" in the header.</h3>
                         <img className="map-example" src="map.png" alt="map-example" />
                     </div>
 
@@ -75,14 +81,14 @@ export default class Home extends Component {
                             <h3>Log In</h3>
                             <form className="login-form" onSubmit={this.handleLoginSubmit}>
                                 <label className="login-user">
-                                    Username: <input onChange={(e) => this.setState({ loginEmail: e.target.value })} value={this.state.loginEmail} type="email" />
+                                    Email: <input onChange={(e) => this.setState({ loginEmail: e.target.value })} value={this.state.loginEmail} type="email" />
                                 </label>
                                 <label className="login-pass">
                                     Password: <input onChange={(e) => this.setState({ loginPassword: e.target.value })} value={this.state.loginPassword} type="password" />
                                 </label>
                                 {
                                     this.state.loading
-                                        ? 'Loadddiiinnnnnggggggg'
+                                        ? <LoadingSpinner/>
                                         : <button>Log in!</button>
                                 }
                             </form>
@@ -91,14 +97,14 @@ export default class Home extends Component {
                             <h3>Sign Up</h3>
                             <form className="signup-form" onSubmit={this.handleSignupSubmit}>
                                 <label className="signup-user">
-                                    Username: <input onChange={(e) => this.setState({ signUpEmail: e.target.value })} value={this.state.signUpEmail} type="email" />
+                                    Email: <input onChange={(e) => this.setState({ signUpEmail: e.target.value })} value={this.state.signUpEmail} type="email" />
                                 </label>
                                 <label className="signup-pass">
                                     Password: <input onChange={(e) => this.setState({ signUpPassword: e.target.value })} value={this.state.signUpPassword} type="password" />
                                 </label>
                                 {
                                     this.state.loading
-                                        ? 'Loadddiiinnnnnggggggg'
+                                        ? <LoadingSpinner/>
                                         : <button>Sign Up!</button>
                                 }
                             </form>
