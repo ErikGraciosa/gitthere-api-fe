@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 
-import BasicMarkerGitHub from '../About/BasicMarkerGitHub.js';
-import BasicMarkerLinkedIn from '../About/BasicMarkerLinkedIn.js';
-
-
 import './About.css';
 
 export default class About extends Component {
