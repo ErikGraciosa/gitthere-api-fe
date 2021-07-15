@@ -6,7 +6,7 @@ export default class About extends Component {
     render() {
         return (
             <>
-                <h2 className="about-h2">About Us</h2>
+                <h2 className="about-h2">About Us page deprecated</h2>
                 {/* <div className="about">
                     <div className="about-div">
                         <img src='https://avatars3.githubusercontent.com/u/18178118?s=460&u=290e25028eca8625d7937546f483102a26a15124&v=4' alt="perry-sittser" />
