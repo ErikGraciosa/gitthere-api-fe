@@ -4,7 +4,7 @@ import request from 'superagent';
 import { triMetStub } from './TriMetLocationStub.js';
 
 // const URL = 'http://localhost:7890';
-const URL = 'https://desolate-bayou-65072.herokuapp.com';
+const URL = process.env.REACT_APP_URL || 'https://desolate-bayou-65072.herokuapp.com';
 
 export default class Detail extends Component {
 
