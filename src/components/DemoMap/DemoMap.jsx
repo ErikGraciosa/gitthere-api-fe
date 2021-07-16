@@ -11,7 +11,7 @@ import '../App/App.css';
 import './DemoMap.css';
 
 // const URL = 'http://localhost:7890';
-const URL = 'https://desolate-bayou-65072.herokuapp.com';
+const URL = process.env.REACT_APP_URL || 'https://desolate-bayou-65072.herokuapp.com';
 
 export default class DemoMap extends Component {
 

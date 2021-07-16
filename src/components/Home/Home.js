@@ -4,7 +4,7 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './Home.css'
 
 //const URL = 'http://localhost:7980';
-const URL = 'https://desolate-bayou-65072.herokuapp.com';
+const URL = process.env.REACT_APP_URL || 'https://desolate-bayou-65072.herokuapp.com';
 
 export default class Home extends Component {
 
